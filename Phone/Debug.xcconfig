@@ -1,0 +1,12 @@
+//
+//  Debug.xcconfig
+//  Phone
+//
+//  Created by KudzaisheMhou on 31/10/2023.
+//
+
+BASE_URL = https://debug.reqres.in/api
+LOGIN_ENDPOINT = /login
+USERS_ENDPOINT = /users?page=1&per_page=12
+UNKNOWN_USERS_ENDPOINT = /unknown?per_page=12
+MORE_USERS_ENDPOINT = /users

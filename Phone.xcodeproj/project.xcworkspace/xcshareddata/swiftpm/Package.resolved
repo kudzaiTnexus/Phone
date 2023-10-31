@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "cuckoo",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Brightify/Cuckoo.git",
+      "state" : {
+        "revision" : "475322e609d009c284464c886ca08cfe421137a9",
+        "version" : "1.10.3"
+      }
+    },
+    {
+      "identity" : "ochamcrest",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hamcrest/OCHamcrest",
+      "state" : {
+        "revision" : "e46f5f52698428a8335704233268980fdd0471af",
+        "version" : "9.0.3"
+      }
+    },
+    {
+      "identity" : "ocmockito",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jonreid/OCMockito",
+      "state" : {
+        "branch" : "main",
+        "revision" : "53d02595965e99ec053c4a7c4258b8a2af47c7e5"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject.git",
+      "state" : {
+        "revision" : "463cb2d659c8ae34899d18057ea5b1bb86fc3178",
+        "version" : "2.8.4"
+      }
+    }
+  ],
+  "version" : 2
+}

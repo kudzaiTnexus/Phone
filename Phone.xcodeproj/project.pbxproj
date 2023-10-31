@@ -14,6 +14,11 @@
 		7BC39B472AF13AE40026F147 /* PhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B462AF13AE40026F147 /* PhoneTests.swift */; };
 		7BC39B512AF13AE40026F147 /* PhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B502AF13AE40026F147 /* PhoneUITests.swift */; };
 		7BC39B532AF13AE40026F147 /* PhoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B522AF13AE40026F147 /* PhoneUITestsLaunchTests.swift */; };
+		7BC39B672AF13CB30026F147 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC39B662AF13CB30026F147 /* Swinject */; };
+		7BC39B692AF13CB30026F147 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC39B682AF13CB30026F147 /* Swinject-Dynamic */; };
+		7BC39B6F2AF13D8A0026F147 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC39B6E2AF13D8A0026F147 /* Cuckoo */; };
+		7BC39B722AF13E960026F147 /* OCMockito in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC39B712AF13E960026F147 /* OCMockito */; };
+		7BC39B742AF141570026F147 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39B732AF141570026F147 /* Debug.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,7 @@
 		7BC39B4C2AF13AE40026F147 /* PhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC39B502AF13AE40026F147 /* PhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneUITests.swift; sourceTree = "<group>"; };
 		7BC39B522AF13AE40026F147 /* PhoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BC39B732AF141570026F147 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC39B672AF13CB30026F147 /* Swinject in Frameworks */,
+				7BC39B692AF13CB30026F147 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC39B6F2AF13D8A0026F147 /* Cuckoo in Frameworks */,
+				7BC39B722AF13E960026F147 /* OCMockito in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +105,18 @@
 		7BC39B332AF13AE30026F147 /* Phone */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39B642AF13C660026F147 /* DependencyContainer */,
+				7BC39B632AF13BE70026F147 /* Service */,
+				7BC39B622AF13BD90026F147 /* Common */,
+				7BC39B612AF13BCE0026F147 /* View */,
+				7BC39B602AF13BC50026F147 /* ViewModel */,
+				7BC39B5F2AF13BBB0026F147 /* Model */,
 				7BC39B342AF13AE30026F147 /* PhoneApp.swift */,
 				7BC39B362AF13AE30026F147 /* ContentView.swift */,
 				7BC39B382AF13AE40026F147 /* Assets.xcassets */,
 				7BC39B3A2AF13AE40026F147 /* Phone.entitlements */,
 				7BC39B3B2AF13AE40026F147 /* Preview Content */,
+				7BC39B732AF141570026F147 /* Debug.xcconfig */,
 			);
 			path = Phone;
 			sourceTree = "<group>";
@@ -129,6 +146,48 @@
 			path = PhoneUITests;
 			sourceTree = "<group>";
 		};
+		7BC39B5F2AF13BBB0026F147 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7BC39B602AF13BC50026F147 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7BC39B612AF13BCE0026F147 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7BC39B622AF13BD90026F147 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7BC39B632AF13BE70026F147 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7BC39B642AF13C660026F147 /* DependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DependencyContainer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +204,10 @@
 			dependencies = (
 			);
 			name = Phone;
+			packageProductDependencies = (
+				7BC39B662AF13CB30026F147 /* Swinject */,
+				7BC39B682AF13CB30026F147 /* Swinject-Dynamic */,
+			);
 			productName = Phone;
 			productReference = 7BC39B312AF13AE30026F147 /* Phone.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +226,10 @@
 				7BC39B442AF13AE40026F147 /* PBXTargetDependency */,
 			);
 			name = PhoneTests;
+			packageProductDependencies = (
+				7BC39B6E2AF13D8A0026F147 /* Cuckoo */,
+				7BC39B712AF13E960026F147 /* OCMockito */,
+			);
 			productName = PhoneTests;
 			productReference = 7BC39B422AF13AE40026F147 /* PhoneTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -217,6 +284,11 @@
 				Base,
 			);
 			mainGroup = 7BC39B282AF13AE30026F147;
+			packageReferences = (
+				7BC39B652AF13CB30026F147 /* XCRemoteSwiftPackageReference "Swinject" */,
+				7BC39B6D2AF13D8A0026F147 /* XCRemoteSwiftPackageReference "Cuckoo" */,
+				7BC39B702AF13E960026F147 /* XCRemoteSwiftPackageReference "OCMockito" */,
+			);
 			productRefGroup = 7BC39B322AF13AE30026F147 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +307,7 @@
 			files = (
 				7BC39B3D2AF13AE40026F147 /* Preview Assets.xcassets in Resources */,
 				7BC39B392AF13AE40026F147 /* Assets.xcassets in Resources */,
+				7BC39B742AF141570026F147 /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +682,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7BC39B652AF13CB30026F147 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.4;
+			};
+		};
+		7BC39B6D2AF13D8A0026F147 /* XCRemoteSwiftPackageReference "Cuckoo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Brightify/Cuckoo.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.10.3;
+			};
+		};
+		7BC39B702AF13E960026F147 /* XCRemoteSwiftPackageReference "OCMockito" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonreid/OCMockito";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7BC39B662AF13CB30026F147 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC39B652AF13CB30026F147 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		7BC39B682AF13CB30026F147 /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC39B652AF13CB30026F147 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
+		};
+		7BC39B6E2AF13D8A0026F147 /* Cuckoo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC39B6D2AF13D8A0026F147 /* XCRemoteSwiftPackageReference "Cuckoo" */;
+			productName = Cuckoo;
+		};
+		7BC39B712AF13E960026F147 /* OCMockito */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC39B702AF13E960026F147 /* XCRemoteSwiftPackageReference "OCMockito" */;
+			productName = OCMockito;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7BC39B292AF13AE30026F147 /* Project object */;
 }
