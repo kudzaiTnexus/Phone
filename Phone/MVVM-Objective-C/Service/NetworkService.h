@@ -6,13 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LoginResponse;
-@class UserResponse;
+#import "RootResponse.h"
+#import "UserInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^LoginCompletion)(LoginResponse * _Nullable response, NSError * _Nullable error);
-typedef void (^UserCompletion)(UserResponse * _Nullable response, NSError * _Nullable error);
+typedef void (^LoginCompletion)(RootResponse * _Nullable response, NSError * _Nullable error);
+typedef void (^UserCompletion)(UserInfo * _Nullable response, NSError * _Nullable error);
 
 extern NSString * const BaseURLKey;
 extern NSString * const LoginEndpointKey;
@@ -30,7 +30,7 @@ extern NSString * const TeamMembersEndpointKey;
 
 - (void)teamMembersWithCompletion:(UserCompletion)completion;
 
-- (void)colorsWithCompletion:(UserCompletion)completion;
+- (void)colorsWithCompletion:(LoginCompletion)completion;
 
 @end
 

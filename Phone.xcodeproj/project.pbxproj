@@ -38,6 +38,7 @@
 		7BC39BA52AF285D20026F147 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BA42AF285D20026F147 /* UserViewModel.swift */; };
 		7BC39BAE2AF28E850026F147 /* UserIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BAD2AF28E850026F147 /* UserIntent.swift */; };
 		7BC39BB02AF28F460026F147 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BAF2AF28F460026F147 /* UserState.swift */; };
+		7BC39BB32AF29B210026F147 /* OCUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BB22AF29B210026F147 /* OCUserViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		7BC39BA42AF285D20026F147 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		7BC39BAD2AF28E850026F147 /* UserIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntent.swift; sourceTree = "<group>"; };
 		7BC39BAF2AF28F460026F147 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
+		7BC39BB12AF29B210026F147 /* OCUserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCUserViewModel.h; sourceTree = "<group>"; };
+		7BC39BB22AF29B210026F147 /* OCUserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCUserViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +155,6 @@
 				7BC39BA72AF28D940026F147 /* MVI-Swift */,
 				7BC39BA62AF28C7B0026F147 /* MVVM-Objective-C */,
 				7BC39B972AF1DEE10026F147 /* Info.plist */,
-				7BC39B642AF13C660026F147 /* DependencyContainer */,
-				7BC39B622AF13BD90026F147 /* Common */,
 				7BC39B342AF13AE30026F147 /* PhoneApp.swift */,
 				7BC39B7E2AF1D1970026F147 /* Phone-Bridging-Header.h */,
 				7BC39B362AF13AE30026F147 /* ContentView.swift */,
@@ -210,13 +211,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7BC39B622AF13BD90026F147 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		7BC39B632AF13BE70026F147 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,13 +223,6 @@
 				7BC39B9A2AF1E5530026F147 /* EndpointKey.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		7BC39B642AF13C660026F147 /* DependencyContainer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DependencyContainer;
 			sourceTree = "<group>";
 		};
 		7BC39BA62AF28C7B0026F147 /* MVVM-Objective-C */ = {
@@ -274,6 +261,8 @@
 		7BC39BA92AF28DB00026F147 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BB12AF29B210026F147 /* OCUserViewModel.h */,
+				7BC39BB22AF29B210026F147 /* OCUserViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -459,6 +448,7 @@
 				7BC39B9E2AF25E700026F147 /* NetworkService.m in Sources */,
 				7BC39B8E2AF1D7A20026F147 /* NetworkClientImplementation.swift in Sources */,
 				7BC39B882AF1D4730026F147 /* UserInfo.m in Sources */,
+				7BC39BB32AF29B210026F147 /* OCUserViewModel.m in Sources */,
 				7BC39B7A2AF145420026F147 /* Support.swift in Sources */,
 				7BC39B852AF1D3C40026F147 /* UserData.swift in Sources */,
 				7BC39B812AF1D1970026F147 /* RootResponse.m in Sources */,

@@ -61,7 +61,7 @@ NSString * const TeamMembersEndpointKey = @"TeamMembersEndPoint";
     [self.networkClient getWithURLString:urlString completion:completion];
 }
 
-- (void)colorsWithCompletion:(nonnull UserCompletion)completion {
+- (void)colorsWithCompletion:(nonnull LoginCompletion)completion {
     
     NSString *baseUrl = [self endpointForKey:BaseURLKey];
     NSString *colorsEndpoint = [self endpointForKey:ColorsEndpointKey];
