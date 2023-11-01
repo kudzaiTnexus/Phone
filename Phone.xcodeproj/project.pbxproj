@@ -32,8 +32,9 @@
 		7BC39B922AF1D80A0026F147 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B912AF1D80A0026F147 /* NetworkError.swift */; };
 		7BC39B942AF1DAF80026F147 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B932AF1DAF80026F147 /* UserService.swift */; };
 		7BC39B962AF1DC510026F147 /* UserServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B952AF1DC510026F147 /* UserServiceImplementation.swift */; };
-		7BC39B992AF1E4890026F147 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B982AF1E4890026F147 /* String+Extension.swift */; };
 		7BC39B9B2AF1E5530026F147 /* EndpointKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B9A2AF1E5530026F147 /* EndpointKey.swift */; };
+		7BC39B9E2AF25E700026F147 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39B9D2AF25E700026F147 /* NetworkService.m */; };
+		7BC39BA12AF279B30026F147 /* ServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BA02AF279B30026F147 /* ServiceClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +84,11 @@
 		7BC39B932AF1DAF80026F147 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7BC39B952AF1DC510026F147 /* UserServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceImplementation.swift; sourceTree = "<group>"; };
 		7BC39B972AF1DEE10026F147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		7BC39B982AF1E4890026F147 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7BC39B9A2AF1E5530026F147 /* EndpointKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointKey.swift; sourceTree = "<group>"; };
+		7BC39B9C2AF25E700026F147 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		7BC39B9D2AF25E700026F147 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		7BC39B9F2AF279B30026F147 /* ServiceClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceClient.h; sourceTree = "<group>"; };
+		7BC39BA02AF279B30026F147 /* ServiceClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +211,6 @@
 		7BC39B622AF13BD90026F147 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7BC39B982AF1E4890026F147 /* String+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -269,6 +272,10 @@
 		7BC39B8A2AF1D77A0026F147 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39B9C2AF25E700026F147 /* NetworkService.h */,
+				7BC39B9D2AF25E700026F147 /* NetworkService.m */,
+				7BC39B9F2AF279B30026F147 /* ServiceClient.h */,
+				7BC39BA02AF279B30026F147 /* ServiceClient.m */,
 			);
 			path = "Objective-C";
 			sourceTree = "<group>";
@@ -418,11 +425,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC39B992AF1E4890026F147 /* String+Extension.swift in Sources */,
 				7BC39B942AF1DAF80026F147 /* UserService.swift in Sources */,
 				7BC39B762AF144DE0026F147 /* LoginResponse.swift in Sources */,
 				7BC39B8C2AF1D7940026F147 /* NetworkClient.swift in Sources */,
 				7BC39B902AF1D7D90026F147 /* URLSessionDataTaskProtocol.swift in Sources */,
+				7BC39BA12AF279B30026F147 /* ServiceClient.m in Sources */,
+				7BC39B9E2AF25E700026F147 /* NetworkService.m in Sources */,
 				7BC39B8E2AF1D7A20026F147 /* NetworkClientImplementation.swift in Sources */,
 				7BC39B882AF1D4730026F147 /* UserInfo.m in Sources */,
 				7BC39B7A2AF145420026F147 /* Support.swift in Sources */,
