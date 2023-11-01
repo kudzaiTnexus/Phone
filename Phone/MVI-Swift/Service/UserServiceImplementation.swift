@@ -30,7 +30,7 @@ class UserServiceImplementation: UserService {
         return try await networkClient.get(url)
     }
     
-    func colors() async throws -> UserResponse {
+    func colors() async throws -> LoginResponse {
         let url = try getUrl(for: .colors)
         return try await networkClient.get(url)
     }
