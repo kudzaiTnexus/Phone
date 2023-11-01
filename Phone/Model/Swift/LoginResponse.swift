@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Login: Codable {
+struct LoginResponse: Codable {
     let page, perPage, total, totalPages: Int?
     let data: [ColorData]?
     let support: Support?
