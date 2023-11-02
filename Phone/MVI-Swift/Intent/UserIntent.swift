@@ -13,4 +13,7 @@ enum UserIntent {
     case teamMembers
     case colors
     case clearError
+    
+    
+    case selectEmployee(UserData)
 }

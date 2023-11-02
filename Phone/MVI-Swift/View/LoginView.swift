@@ -48,7 +48,7 @@ struct LoginView: View {
                 .disabled(username.isEmpty || password.isEmpty)
             }
             
-            if userViewModel.viewState.isLoading {
+            if userViewModel.viewState.isLoginLoading {
                 Color.black.opacity(0.2)
                     .frame(width: 100, height: 100)
                     .cornerRadius(8)
@@ -58,7 +58,7 @@ struct LoginView: View {
             }
         
         }
-        .disabled(userViewModel.viewState.isLoading)
+        .disabled(userViewModel.viewState.isLoginLoading)
         .padding(.horizontal, 32)
         .background(
             Group {

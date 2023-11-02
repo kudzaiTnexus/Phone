@@ -13,6 +13,8 @@ struct CardView: View {
     var showChevron: Bool
     var showCircle: Bool
     
+    var title: String = ""
+    var avatar: String = ""
     var infoArray: [String]
     
     var body: some View {
@@ -25,8 +27,8 @@ struct CardView: View {
             Group {
                 if showTitle {
                     HStack {
-                        Text("Hello, World!")
-                            .font(.system(size: 16, weight: .semibold))
+                        Text(title)
+                            .font(.system(size: 14, weight: .semibold))
                             .foregroundStyle(Color.black)
                         
                         Spacer()
@@ -43,11 +45,23 @@ struct CardView: View {
                     .frame(width: 30, height: 30)
                 } else {
                     
-                    Image(systemName: "rectangle.fill.on.rectangle.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundStyle(.white)
-                        .frame(width: 40, height: 40)
+                    AsyncImage(url: URL(string: avatar)) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.white)
+                        } else if phase.error != nil {
+                            Color.red
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.white)
+                        } else {
+                            Color.gray
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.white)
+                        }
+                    }
+                    .frame(width: 40, height: 40)
                 }
                 
                 VStack(spacing: 8) {

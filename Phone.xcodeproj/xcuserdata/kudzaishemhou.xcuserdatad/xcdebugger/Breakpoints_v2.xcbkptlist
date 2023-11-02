@@ -7,81 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CE132AA5-91A2-443F-8D1C-F9E4CE420FA4"
+            uuid = "2CD44CC7-4BBF-4B3D-B8B0-C794F2254A29"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Phone/MVI-Swift/Service/UserServiceImplementation.swift"
+            filePath = "Phone/MVI-Swift/Intent/UserViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getUrl(for:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "intent(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F23B49F4-FB00-459D-900E-AC277511AE14"
+            uuid = "4435EB66-0390-4F9B-A3BC-B0F5CDFC312C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Phone/MVI-Swift/Service/UserServiceImplementation.swift"
+            filePath = "Phone/MVI-Swift/Intent/UserViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getUrl(for:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "intent(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F23B49F4-FB00-459D-900E-AC277511AE14 - f461f9a517111f83"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Phone.UserServiceImplementation.getUrl(for: Phone.EndpointKey) throws -&gt; Swift.String"
-                  moduleName = "Phone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kudzaishemhou/Documents/Phone/Phone/MVI-Swift/Service/UserServiceImplementation.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "336">
-               </Location>
-               <Location
-                  uuid = "F23B49F4-FB00-459D-900E-AC277511AE14 - f461f9a517111f83"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Phone.UserServiceImplementation.getUrl(for: Phone.EndpointKey) throws -&gt; Swift.String"
-                  moduleName = "Phone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kudzaishemhou/Documents/Phone/Phone/MVI-Swift/Service/UserServiceImplementation.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "400">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "60B8BFBF-74A5-42FD-8840-5F547BDD4A98"
-            shouldBeEnabled = "Yes"
+            uuid = "00B687C4-31A3-45FC-A518-58ABD92A4B68"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Phone/MVI-Swift/View/CardView.swift"
+            filePath = "Phone/MVI-Swift/Service/UserServiceImplementation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getUrl(for:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

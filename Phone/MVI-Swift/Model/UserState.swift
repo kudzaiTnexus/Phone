@@ -15,7 +15,11 @@ struct UserState {
     
     var homeId: UUID = UUID()
     
-    var isLoading: Bool = false
+    var isLoginLoading: Bool = false
+    var isTeamMembersLoading: Bool = false
+    var isEmployeesLoading: Bool = false
+    var isColorsLoading: Bool = false
+    
     var isLoggedIn: Bool = false
     var showEmployees: Bool = false
     var showInfoView: Bool = false
@@ -26,8 +30,14 @@ struct UserState {
     
     var error: Error? = nil
     
+    
+    var selectedEmployee: UserData?
+    
     mutating func resetToDefault() {
-        isLoading = false
+        isLoginLoading = false
+        isTeamMembersLoading = false
+        isEmployeesLoading = false
+        isColorsLoading = false
         showEmployees = false
         showInfoView = false
         showColorsView = false

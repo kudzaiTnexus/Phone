@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - UserData
-struct UserData: Codable {
-    let id: Int?
+struct UserData: Codable, Hashable, Identifiable {
+    let id: Int
     let email, firstName, lastName: String?
     let avatar: String?
 

@@ -14,6 +14,11 @@ struct HomeView: View {
     @State var username: String = ""
     @State private var password: String = ""
     
+    var employee: UserData? {
+        userViewModel.viewState.selectedEmployee ??
+        userViewModel.viewState.employees.first
+    }
+    
     var body: some View {
         VStack {
             
@@ -21,7 +26,12 @@ struct HomeView: View {
                 showTitle: true,
                 showChevron: true,
                 showCircle: false,
-                infoArray: ["Full Name", "Email"]
+                title: "Select an Employee",
+                avatar: employee?.avatar ?? "",
+                infoArray: [
+                    employee?.firstName ?? ".....",
+                    employee?.email ?? ".........."
+                ]
             )
             .padding(.top, 60)
             .onTapGesture {
@@ -48,7 +58,17 @@ struct HomeView: View {
             
             Spacer()
         }
+        .overlay(
+            Group {
+                if userViewModel.viewState.isEmployeesLoading {
+                    ProgressView()
+                        .scaleEffect(1.5, anchor: .center)
+                }
+            }
+        )
+        .disabled(userViewModel.viewState.isEmployeesLoading)
         .id(userViewModel.viewState.homeId)
+        .redacted(reason: userViewModel.viewState.isEmployeesLoading ? .placeholder : [])
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -65,6 +85,8 @@ struct HomeView: View {
                 .foregroundStyle(.white)
                 .padding(.trailing, 8)
                 .border(Color.white, width: 1, cornerRadius: 4)
+                .redacted(reason: userViewModel.viewState.isEmployeesLoading ? .placeholder : [])
+                .disabled(userViewModel.viewState.isEmployeesLoading)
             }
         }
         .background(

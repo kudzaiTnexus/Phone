@@ -21,16 +21,25 @@ class UserServiceImplementation: UserService {
     }
     
     func employees() async throws -> UserResponse {
+        
+        try await Task.sleep(nanoseconds: 7 * 1_000_000_000)
+        
         let url = try getUrl(for: .employees)
         return try await networkClient.get(url)
     }
     
     func teamMembers() async throws -> UserResponse {
+        
+        try await Task.sleep(nanoseconds: 5 * 1_000_000_000)
+        
         let url = try getUrl(for: .teamMembers)
         return try await networkClient.get(url)
     }
     
     func colors() async throws -> LoginResponse {
+        
+        try await Task.sleep(nanoseconds: 15 * 1_000_000_000)
+        
         let url = try getUrl(for: .colors)
         return try await networkClient.get(url)
     }

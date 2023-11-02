@@ -13,22 +13,30 @@ struct EmployeesView: View {
     
     var body: some View {
         VStack {
+            ScrollView(.vertical, showsIndicators: false ) {
             LazyVStack(spacing: 0) {
-                ForEach(0...5, id: \.self) { _ in
+                ForEach(userViewModel.viewState.employees, id: \.self) { employee in
                     CardView(
                         showTitle: false,
                         showChevron: false,
-                        showCircle: false, 
-                        infoArray: ["Full Name", "Email"]
+                        showCircle: false,
+                        avatar: employee.avatar ?? "",
+                        infoArray: [
+                            employee.firstName ?? "",
+                            employee.email ?? ""
+                        ]
                     )
                     .onTapGesture {
+                        userViewModel.intent(.selectEmployee(employee))
                         userViewModel.viewState.showEmployees = false
                     }
                 }
             }
+        }
             
             Spacer()
         }
+        .edgesIgnoringSafeArea(.bottom)
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
