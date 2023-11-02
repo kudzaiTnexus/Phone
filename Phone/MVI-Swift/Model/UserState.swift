@@ -10,7 +10,7 @@ import Foundation
 struct UserState {
     var login: LoginResponse? = nil
     var employees: [UserData] = []
-    var teamMembers: [UserData] = []
+    var teamMembers: UserDataInfo? = nil
     var colorsData: [ColorData] = []
     
     var homeId: UUID = UUID()
@@ -30,8 +30,25 @@ struct UserState {
     
     var error: Error? = nil
     
-    
     var selectedEmployee: UserData?
+    var selectedColor: ColorData?
+    var dateOfBirth: String = ""
+    var placeOfBirth: String = ""
+    var selectedGender: Int = 0
+    var residentialAddress: String = ""
+    
+    var gender: String {
+        switch selectedGender {
+        case 0:
+            return "Male"
+        case 1:
+            return "Female"
+        case 2:
+            return "Other"
+        default:
+            return ""
+        }
+    }
     
     mutating func resetToDefault() {
         isLoginLoading = false
@@ -44,6 +61,9 @@ struct UserState {
         showReviewView = false
         showErrorView = false
         showSuccessView = false
+        selectedGender = 0
+        residentialAddress = ""
         error = nil
     }
+    
 }

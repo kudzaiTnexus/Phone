@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CardView: View {
     
@@ -15,6 +16,7 @@ struct CardView: View {
     
     var title: String = ""
     var avatar: String = ""
+    var circleColor: String = "#FFFFF"
     var infoArray: [String]
     
     var body: some View {
@@ -41,26 +43,19 @@ struct CardView: View {
                 
                 if showCircle {
                     Circle()
-                    .fill(Color.red)
+                    .fill(Color(hex: circleColor))
                     .frame(width: 30, height: 30)
                 } else {
                     
-                    AsyncImage(url: URL(string: avatar)) { phase in
-                        if let image = phase.image {
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.white)
-                        } else if phase.error != nil {
-                            Color.red
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.white)
-                        } else {
-                            Color.gray
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.white)
-                        }
+                    KFImage(URL(string: avatar))
+                    .resizable()
+                    .diskCacheExpiration(.never)
+                    .placeholder {
+                        Rectangle().fill(Color.gray)
                     }
+                    .cornerRadius(8)
+                    .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 5)
+                    
                     .frame(width: 40, height: 40)
                 }
                 

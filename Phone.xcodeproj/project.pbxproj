@@ -49,6 +49,16 @@
 		7BC39BC42AF3968B0026F147 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BC32AF3968B0026F147 /* ResultView.swift */; };
 		7BC39BC72AF397520026F147 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC39BC62AF397520026F147 /* Lottie */; };
 		7BC39BCA2AF398490026F147 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BC92AF398490026F147 /* success.json */; };
+		7BC39BCF2AF3D8590026F147 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC39BCE2AF3D8590026F147 /* Kingfisher */; };
+		7BC39BD22AF3DE710026F147 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BD12AF3DE710026F147 /* Color+Extension.swift */; };
+		7BC39BD42AF3F3550026F147 /* ColorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BD32AF3F3550026F147 /* ColorResponse.swift */; };
+		7BC39BD62AF3F6950026F147 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BD52AF3F6950026F147 /* error.json */; };
+		7BC39BD92AF3FCBB0026F147 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BD82AF3FCBB0026F147 /* login.json */; };
+		7BC39BDB2AF3FCE20026F147 /* employees.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BDA2AF3FCE10026F147 /* employees.json */; };
+		7BC39BDD2AF3FD1B0026F147 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BDC2AF3FD1B0026F147 /* colors.json */; };
+		7BC39BDF2AF3FD830026F147 /* LoginRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BDE2AF3FD830026F147 /* LoginRequestBody.swift */; };
+		7BC39BE12AF3FDA20026F147 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BE02AF3FDA20026F147 /* UserRequest.swift */; };
+		7BC39BE32AF406310026F147 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BE22AF406310026F147 /* users.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +127,15 @@
 		7BC39BC12AF390720026F147 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		7BC39BC32AF3968B0026F147 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		7BC39BC92AF398490026F147 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		7BC39BD12AF3DE710026F147 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		7BC39BD32AF3F3550026F147 /* ColorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResponse.swift; sourceTree = "<group>"; };
+		7BC39BD52AF3F6950026F147 /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		7BC39BD82AF3FCBB0026F147 /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		7BC39BDA2AF3FCE10026F147 /* employees.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = employees.json; sourceTree = "<group>"; };
+		7BC39BDC2AF3FD1B0026F147 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
+		7BC39BDE2AF3FD830026F147 /* LoginRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBody.swift; sourceTree = "<group>"; };
+		7BC39BE02AF3FDA20026F147 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		7BC39BE22AF406310026F147 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC39BCF2AF3D8590026F147 /* Kingfisher in Frameworks */,
 				7BC39B672AF13CB30026F147 /* Swinject in Frameworks */,
 				7BC39B692AF13CB30026F147 /* Swinject-Dynamic in Frameworks */,
 				7BC39BC72AF397520026F147 /* Lottie in Frameworks */,
@@ -221,6 +241,9 @@
 				7BC39B792AF145420026F147 /* Support.swift */,
 				7BC39B822AF1D3820026F147 /* UserResponse.swift */,
 				7BC39B842AF1D3C40026F147 /* UserData.swift */,
+				7BC39BD32AF3F3550026F147 /* ColorResponse.swift */,
+				7BC39BDE2AF3FD830026F147 /* LoginRequestBody.swift */,
+				7BC39BE02AF3FDA20026F147 /* UserRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +326,7 @@
 		7BC39BAB2AF28E340026F147 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BD02AF3DE620026F147 /* Extensions */,
 				7BC39BB42AF29F7B0026F147 /* LoginView.swift */,
 				7BC39BB62AF2B5150026F147 /* HomeView.swift */,
 				7BC39BB92AF35D030026F147 /* CardView.swift */,
@@ -334,9 +358,30 @@
 		7BC39BC82AF3983D0026F147 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BD72AF3FCA20026F147 /* Offline */,
+				7BC39BD52AF3F6950026F147 /* error.json */,
 				7BC39BC92AF398490026F147 /* success.json */,
 			);
 			path = Json;
+			sourceTree = "<group>";
+		};
+		7BC39BD02AF3DE620026F147 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39BD12AF3DE710026F147 /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7BC39BD72AF3FCA20026F147 /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39BD82AF3FCBB0026F147 /* login.json */,
+				7BC39BDA2AF3FCE10026F147 /* employees.json */,
+				7BC39BDC2AF3FD1B0026F147 /* colors.json */,
+				7BC39BE22AF406310026F147 /* users.json */,
+			);
+			path = Offline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +404,7 @@
 				7BC39B662AF13CB30026F147 /* Swinject */,
 				7BC39B682AF13CB30026F147 /* Swinject-Dynamic */,
 				7BC39BC62AF397520026F147 /* Lottie */,
+				7BC39BCE2AF3D8590026F147 /* Kingfisher */,
 			);
 			productName = Phone;
 			productReference = 7BC39B312AF13AE30026F147 /* Phone.app */;
@@ -442,6 +488,7 @@
 				7BC39B6D2AF13D8A0026F147 /* XCRemoteSwiftPackageReference "Cuckoo" */,
 				7BC39B702AF13E960026F147 /* XCRemoteSwiftPackageReference "OCMockito" */,
 				7BC39BC52AF397520026F147 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				7BC39BCD2AF3D8590026F147 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7BC39B322AF13AE30026F147 /* Products */;
 			projectDirPath = "";
@@ -461,8 +508,13 @@
 			files = (
 				7BC39B3D2AF13AE40026F147 /* Preview Assets.xcassets in Resources */,
 				7BC39B392AF13AE40026F147 /* Assets.xcassets in Resources */,
+				7BC39BD62AF3F6950026F147 /* error.json in Resources */,
+				7BC39BE32AF406310026F147 /* users.json in Resources */,
 				7BC39B742AF141570026F147 /* Debug.xcconfig in Resources */,
+				7BC39BDB2AF3FCE20026F147 /* employees.json in Resources */,
+				7BC39BDD2AF3FD1B0026F147 /* colors.json in Resources */,
 				7BC39BCA2AF398490026F147 /* success.json in Resources */,
+				7BC39BD92AF3FCBB0026F147 /* login.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,11 +561,15 @@
 				7BC39B782AF145140026F147 /* ColorData.swift in Sources */,
 				7BC39B962AF1DC510026F147 /* UserServiceImplementation.swift in Sources */,
 				7BC39BC02AF38EE00026F147 /* ColorsView.swift in Sources */,
+				7BC39BDF2AF3FD830026F147 /* LoginRequestBody.swift in Sources */,
 				7BC39BA52AF285D20026F147 /* UserViewModel.swift in Sources */,
+				7BC39BD22AF3DE710026F147 /* Color+Extension.swift in Sources */,
 				7BC39B832AF1D3820026F147 /* UserResponse.swift in Sources */,
 				7BC39B922AF1D80A0026F147 /* NetworkError.swift in Sources */,
 				7BC39B9B2AF1E5530026F147 /* EndpointKey.swift in Sources */,
 				7BC39BB72AF2B5150026F147 /* HomeView.swift in Sources */,
+				7BC39BD42AF3F3550026F147 /* ColorResponse.swift in Sources */,
+				7BC39BE12AF3FDA20026F147 /* UserRequest.swift in Sources */,
 				7BC39BC22AF390720026F147 /* ReviewView.swift in Sources */,
 				7BC39B372AF13AE30026F147 /* ContentView.swift in Sources */,
 				7BC39B352AF13AE30026F147 /* PhoneApp.swift in Sources */,
@@ -909,6 +965,14 @@
 				version = 4.3.3;
 			};
 		};
+		7BC39BCD2AF3D8590026F147 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -936,6 +1000,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7BC39BC52AF397520026F147 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		7BC39BCE2AF3D8590026F147 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC39BCD2AF3D8590026F147 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ColorData: Codable {
-    let id: Int?
+struct ColorData: Codable, Hashable, Identifiable {
+    let id: Int
     let name: String?
     let year: Int?
     let color, pantoneValue: String?

@@ -55,13 +55,40 @@ class UserViewModel: ObservableObject {
             )
         case .teamMembers:
             load( { [weak self] in
-                self?.viewState.isTeamMembersLoading = true
-                return try await self?.userService.teamMembers()
+                
+                guard let self ,
+                      let selectedEmployee = viewState.selectedEmployee else {
+                    self?.viewState.showErrorView = true
+                    throw NetworkError.unknown
+                }
+                
+                self.viewState.isTeamMembersLoading = true
+                
+                let request = UserDataInfo(
+                    userLoginToken: viewState.login?.token ?? "",
+                    personalDetails: PersonalDetails(
+                        id: selectedEmployee.id,
+                        email: selectedEmployee.email,
+                        firstName: selectedEmployee.firstName,
+                        lastName: selectedEmployee.lastName,
+                        avatar: selectedEmployee.avatar,
+                        dob: viewState.dateOfBirth,
+                        gender: viewState.gender
+                    ),
+                    additionalInformation: AdditionalInformation(
+                        placeOfBirth: viewState.placeOfBirth,
+                        preferredColor: viewState.selectedColor?.color,
+                        residentialAddress: viewState.residentialAddress
+                    )
+                )
+                
+                return try await self.userService.teamMembers(request: request)
             },
                   completion: { [weak self] result in
                     switch result {
                     case .success(let teamData):
-                        self?.viewState.teamMembers = teamData?.data ?? []
+                        self?.viewState.teamMembers = teamData 
+                        self?.viewState.showSuccessView = true
                     case .failure(let error):
                         self?.viewState.error = error
                     }
@@ -85,13 +112,28 @@ class UserViewModel: ObservableObject {
             )
         case .selectEmployee(let employee):
             viewState.selectedEmployee = employee
+        case .selectedColor(let color):
+            viewState.selectedColor = color
+        case .updateDateOfBirth(let newDateOfBirth):
+            viewState.dateOfBirth = newDateOfBirth
+            validateDateOfBirth()
+        case .updatePlaceOfBirth(let newPlaceOfBirth):
+            viewState.placeOfBirth = newPlaceOfBirth
+            validatePlaceOfBirth()
         case .clearError:
             viewState.error = nil
         }
     }
     
+    private func validateDateOfBirth() {
+        // Validation logic for dateOfBirth
+    }
+    
+    private func validatePlaceOfBirth() {
+        // Validation logic for dateOfBirth
+    }
+    
     private func postLoginDataFetch() {
-        intent(.teamMembers)
         intent(.employees)
         intent(.colors)
     }
@@ -100,12 +142,14 @@ class UserViewModel: ObservableObject {
         _ operation: @escaping () async throws -> T,
         completion: @escaping (Result<T, Error>) -> Void
     ) {
+        viewState.showErrorView = false
         Task {
             do {
                 let result = try await operation()
                 completion(.success(result))
             } catch {
                 completion(.failure(error))
+                viewState.showErrorView = true
             }
         }
     }

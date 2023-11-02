@@ -30,10 +30,18 @@ struct PhoneApp: App {
                 LoginView()
             }
             .environmentObject(userViewModel)
-//            .fullScreenCover(isPresented: $userViewModel.viewState.showSuccessView) { 
-//                ResultView()
-//                    .environmentObject(userViewModel)
-//            }
+            .overlay(
+                    Group {
+                        if userViewModel.viewState.isTeamMembersLoading {
+                            ZStack {
+                                Color.black.opacity(0.3).edgesIgnoringSafeArea(.all)
+                                
+                                ProgressView()
+                                    .scaleEffect(1.5, anchor: .center)
+                            }
+                        }
+                    }
+            )
         }
     }
 }

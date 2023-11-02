@@ -13,22 +13,27 @@ struct ColorsView: View {
     
     var body: some View {
         VStack {
+            ScrollView(.vertical, showsIndicators: false ) {
             LazyVStack(spacing: 0) {
-                ForEach(0...5, id: \.self) { _ in
+                ForEach(userViewModel.viewState.colorsData, id: \.self) { color in
                     CardView(
                         showTitle: false,
                         showChevron: false,
                         showCircle: true,
-                        infoArray: ["Color name"]
+                        circleColor: color.color ?? "",
+                        infoArray: [color.name ?? ""]
                     )
                     .onTapGesture {
+                        userViewModel.intent(.selectedColor(color))
                         userViewModel.viewState.showColorsView = false
                     }
                 }
             }
+        }
             
             Spacer()
         }
+        .edgesIgnoringSafeArea(.bottom)
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

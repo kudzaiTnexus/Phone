@@ -10,9 +10,11 @@ import SwiftUI
 struct InfoView: View {
     
     @EnvironmentObject var userViewModel: UserViewModel
-    @State private var gender = 0
     
-    @State var username: String = ""
+    var selectedColor: ColorData? {
+        userViewModel.viewState.selectedColor ?? 
+        userViewModel.viewState.colorsData.first
+    }
     
     var body: some View {
         VStack {
@@ -22,7 +24,7 @@ struct InfoView: View {
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.black)
                 
-                Picker("Choose Gender", selection: $gender) {
+                Picker("Choose Gender", selection: $userViewModel.viewState.selectedGender) {
                     Text("Male").tag(0)
                     Text("Female").tag(1)
                     Text("Other").tag(2)
@@ -36,14 +38,15 @@ struct InfoView: View {
                 showTitle: true,
                 showChevron: true,
                 showCircle: true,
-                infoArray: ["Color name"]
+                circleColor: selectedColor?.color ?? "",
+                infoArray: [selectedColor?.name ?? ""]
             )
             .padding(.top, 60)
             .onTapGesture {
                 userViewModel.viewState.showColorsView = true
             }
             
-                TextField("Residential Address...", text: $username)
+            TextField("Residential Address...", text: $userViewModel.viewState.residentialAddress)
                     .padding(8)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 4))
@@ -54,6 +57,8 @@ struct InfoView: View {
             
             Spacer()
         }
+        .redacted(reason: userViewModel.viewState.isColorsLoading ? .placeholder : [])
+        .disabled(userViewModel.viewState.isColorsLoading)
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -79,18 +84,12 @@ struct InfoView: View {
                 .foregroundStyle(.white)
                 .padding(.trailing, 8)
                 .border(Color.white, width: 1, cornerRadius: 4)
+                .redacted(reason: userViewModel.viewState.isColorsLoading ? .placeholder : [])
+                .disabled(userViewModel.viewState.isColorsLoading)
             }
         }
         .background(
             Group {
-                NavigationLink(
-                    "",
-                    destination: EmployeesView()
-                        .navigationBarBackButtonHidden(true),
-                    isActive: $userViewModel.viewState.showEmployees
-                )
-                .isDetailLink(false)
-                
                 NavigationLink(
                     "",
                     destination: ColorsView()

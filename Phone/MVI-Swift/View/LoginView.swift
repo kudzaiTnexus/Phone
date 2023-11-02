@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct LoginView: View {
     @State var username: String = ""
@@ -17,6 +18,7 @@ struct LoginView: View {
         ZStack {
             
             VStack {
+                
                 VStack {
                     TextField("Enter username...", text: $username)
                         .padding(8)
@@ -24,6 +26,7 @@ struct LoginView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 4))
                         .overlay(RoundedRectangle(cornerRadius: 4)
                             .stroke(Color.gray.opacity(0.3)))
+                        .textInputAutocapitalization(.never)
                     
                     SecureField("Password", text: $password)
                         .padding(8)
@@ -31,6 +34,12 @@ struct LoginView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 4))
                         .overlay(RoundedRectangle(cornerRadius: 4)
                             .stroke(Color.gray.opacity(0.3)))
+                        .textInputAutocapitalization(.never)
+                    
+                    if userViewModel.viewState.showErrorView {
+                        errorView
+                            .transition(AnyTransition.fadeIn.animation(.easeInOut)) // Direct animation application
+                    }
                 }
                 .padding(.bottom, 40)
                 
@@ -70,6 +79,33 @@ struct LoginView: View {
                 .isDetailLink(false)
             }
         )
+    }
+    
+    @ViewBuilder
+    var errorView: some View {
+        HStack {
+            HStack {
+                LottieView(animation: .named("error"))
+                    .playing()
+                    .frame(width: 24, height: 24)
+                
+                Text("Something went wrong, Incorrect username or password")
+                    .foregroundColor(.red)
+                    .font(.system(size: 12, weight: .regular))
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+            }
+            
+            Spacer()
+        }
+    }
+}
+
+extension AnyTransition {
+    static var fadeIn: AnyTransition {
+        let insertion = AnyTransition.opacity.combined(with: .scale)
+        let removal = AnyTransition.opacity
+        return .asymmetric(insertion: insertion, removal: removal)
     }
 }
 

@@ -17,29 +17,21 @@ class UserServiceImplementation: UserService {
     
     func login(with username: String, password: String) async throws -> LoginResponse {
         let url = try getUrl(for: .login)
-        return try await networkClient.get(url)
+        let requestBody = LoginRequestBody(username: username, password: password)
+        return try await networkClient.post(url, body: requestBody, headers: nil)
     }
     
     func employees() async throws -> UserResponse {
-        
-        try await Task.sleep(nanoseconds: 7 * 1_000_000_000)
-        
         let url = try getUrl(for: .employees)
         return try await networkClient.get(url)
     }
     
-    func teamMembers() async throws -> UserResponse {
-        
-        try await Task.sleep(nanoseconds: 5 * 1_000_000_000)
-        
+    func teamMembers(request: UserDataInfo) async throws -> UserDataInfo {
         let url = try getUrl(for: .teamMembers)
-        return try await networkClient.get(url)
+        return try await networkClient.post(url, body: request, headers: nil)
     }
     
-    func colors() async throws -> LoginResponse {
-        
-        try await Task.sleep(nanoseconds: 15 * 1_000_000_000)
-        
+    func colors() async throws -> ColorResponse {
         let url = try getUrl(for: .colors)
         return try await networkClient.get(url)
     }

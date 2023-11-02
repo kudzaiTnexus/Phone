@@ -20,7 +20,14 @@ struct ReviewView: View {
                 showTitle: true,
                 showChevron: false,
                 showCircle: false,
-                infoArray: ["Full Name", "Email", "DOB", "Gender"]
+                title: "Personal Details",
+                avatar: userViewModel.viewState.selectedEmployee?.avatar ?? "",
+                infoArray: [
+                    (userViewModel.viewState.selectedEmployee?.firstName ?? "" + (userViewModel.viewState.selectedEmployee?.lastName ?? "")),
+                    userViewModel.viewState.selectedEmployee?.email ?? "",
+                    userViewModel.viewState.dateOfBirth,
+                    userViewModel.viewState.gender
+                ]
             )
             .padding(.top, 60)
             
@@ -36,15 +43,15 @@ struct ReviewView: View {
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Color name")
+                        Text(userViewModel.viewState.selectedColor?.name ?? "")
                             .font(.system(size: 14, weight: .regular))
                             .foregroundStyle(.black)
                         
-                        Text("Place of birth")
+                        Text(userViewModel.viewState.placeOfBirth)
                             .font(.system(size: 14, weight: .regular))
                             .foregroundStyle(.black)
                         
-                        Text("Residential Address")
+                        Text(userViewModel.viewState.residentialAddress)
                             .font(.system(size: 14, weight: .regular))
                             .foregroundStyle(.black)
                     }
@@ -60,8 +67,7 @@ struct ReviewView: View {
             Spacer()
             
             Button(action: {
-//                userViewModel.intent(.login(username: username, password: password))
-                userViewModel.viewState.showSuccessView = true
+                userViewModel.intent(.teamMembers)
             }) {
                 Text("Submit")
                     .foregroundColor(.white)

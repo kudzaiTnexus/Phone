@@ -16,4 +16,7 @@ enum UserIntent {
     
     
     case selectEmployee(UserData)
+    case selectedColor(ColorData)
+    case updateDateOfBirth(String)
+    case updatePlaceOfBirth(String)
 }

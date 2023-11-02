@@ -10,6 +10,6 @@ import Foundation
 protocol UserService {
     func login(with username: String, password: String) async throws -> LoginResponse
     func employees() async throws -> UserResponse
-    func teamMembers() async throws -> UserResponse
-    func colors() async throws -> LoginResponse
+    func teamMembers(request: UserDataInfo) async throws -> UserDataInfo
+    func colors() async throws -> ColorResponse
 }

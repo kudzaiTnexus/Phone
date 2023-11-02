@@ -7,16 +7,9 @@
 
 import Foundation
 
+// MARK: - LoginResponse
 struct LoginResponse: Codable {
-    let page, perPage, total, totalPages: Int?
-    let data: [ColorData]?
-    let support: Support?
-
-    enum CodingKeys: String, CodingKey {
-        case page
-        case perPage = "per_page"
-        case total
-        case totalPages = "total_pages"
-        case data, support
-    }
+    let token: String?
 }
+
+

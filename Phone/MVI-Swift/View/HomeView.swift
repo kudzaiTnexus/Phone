@@ -13,6 +13,8 @@ struct HomeView: View {
     
     @State var username: String = ""
     @State private var password: String = ""
+    @State var showDatePicker: Bool = false
+    @State private var selectedDate: Date = Date()
     
     var employee: UserData? {
         userViewModel.viewState.selectedEmployee ??
@@ -39,19 +41,42 @@ struct HomeView: View {
             }
             
             VStack {
-                TextField("Date of Birth...", text: $username)
-                    .padding(8)
+
+                HStack {
+                    DatePicker("",
+                               selection: $selectedDate,
+                               displayedComponents: [.date])
+                    .opacity(0.05)
+                    .frame(width: 100)
+                    
+                    Spacer()
+                }
+                .overlay(
+                        HStack {
+                            Text(userViewModel.viewState.dateOfBirth.isEmpty ? "Date of Birth...": userViewModel.viewState.dateOfBirth)
+                                .foregroundColor(userViewModel.viewState.dateOfBirth.isEmpty ? .gray.opacity(0.5) : .primary)
+                            Spacer()
+                        }
+                    .padding(10)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 4))
                     .overlay(RoundedRectangle(cornerRadius: 4)
-                        .stroke(Color.gray.opacity(0.3)))
+                                .stroke(Color.gray.opacity(0.3)))
+                    .allowsHitTesting(false)
+                )
+                .onChange(of: selectedDate) { val in
+                    userViewModel.viewState.dateOfBirth = DateFormatter.yyyyMMdd.string(from: val)
+                }
                 
-                TextField("Place of Birth...", text: $username)
+                TextField("Place of Birth...", text: $userViewModel.viewState.placeOfBirth)
                     .padding(8)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 4))
                     .overlay(RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray.opacity(0.3)))
+                    .onChange(of: userViewModel.viewState.placeOfBirth) { newValue in
+                        userViewModel.intent(.updatePlaceOfBirth(newValue))
+                    }
             }
             .padding(.horizontal)
             .padding(.top, 60)
@@ -119,6 +144,14 @@ extension View {
     func border(_ color: Color, width: CGFloat, cornerRadius: CGFloat) -> some View {
         overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(color, lineWidth: width))
     }
+}
+
+extension DateFormatter {
+    static let yyyyMMdd: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
 }
 
 #Preview {
