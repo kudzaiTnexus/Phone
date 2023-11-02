@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "778F806A-EC90-42D3-AE1D-1DCBDC06963B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE132AA5-91A2-443F-8D1C-F9E4CE420FA4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phone/MVI-Swift/Service/UserServiceImplementation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getUrl(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F23B49F4-FB00-459D-900E-AC277511AE14"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phone/MVI-Swift/Service/UserServiceImplementation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getUrl(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F23B49F4-FB00-459D-900E-AC277511AE14 - f461f9a517111f83"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phone.UserServiceImplementation.getUrl(for: Phone.EndpointKey) throws -&gt; Swift.String"
+                  moduleName = "Phone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kudzaishemhou/Documents/Phone/Phone/MVI-Swift/Service/UserServiceImplementation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "F23B49F4-FB00-459D-900E-AC277511AE14 - f461f9a517111f83"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Phone.UserServiceImplementation.getUrl(for: Phone.EndpointKey) throws -&gt; Swift.String"
+                  moduleName = "Phone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kudzaishemhou/Documents/Phone/Phone/MVI-Swift/Service/UserServiceImplementation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60B8BFBF-74A5-42FD-8840-5F547BDD4A98"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Phone/MVI-Swift/View/CardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

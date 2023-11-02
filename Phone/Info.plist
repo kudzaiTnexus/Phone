@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>BaseURL</key>
-	<string>$(BASE_URL)</string>
+	<string>${BASE_URL}</string>
 	<key>LoginEndpoint</key>
-	<string>$(LOGIN_ENDPOINT)</string>
+	<string>${LOGIN_ENDPOINT}</string>
 	<key>EmployeesEndpoint</key>
-	<string>$(EMPLOYEES_ENDPOINT)</string>
+	<string>${EMPLOYEES_ENDPOINT}</string>
 	<key>ColorEndpoint</key>
-	<string>$(COLORS_ENDPOINT)</string>
+	<string>${COLORS_ENDPOINT}</string>
 	<key>TeamMembersEndPoint</key>
-	<string>$(TEAM_MEMBERS_ENDPOINT)</string>
+	<string>${TEAM_MEMBERS_ENDPOINT}</string>
 	<key>CFBundleURLTypes</key>
 	<array/>
 </dict>

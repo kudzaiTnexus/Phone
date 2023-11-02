@@ -39,6 +39,16 @@
 		7BC39BAE2AF28E850026F147 /* UserIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BAD2AF28E850026F147 /* UserIntent.swift */; };
 		7BC39BB02AF28F460026F147 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BAF2AF28F460026F147 /* UserState.swift */; };
 		7BC39BB32AF29B210026F147 /* OCUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BB22AF29B210026F147 /* OCUserViewModel.m */; };
+		7BC39BB52AF29F7B0026F147 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BB42AF29F7B0026F147 /* LoginView.swift */; };
+		7BC39BB72AF2B5150026F147 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BB62AF2B5150026F147 /* HomeView.swift */; };
+		7BC39BBA2AF35D030026F147 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BB92AF35D030026F147 /* CardView.swift */; };
+		7BC39BBC2AF3673C0026F147 /* EmployeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BBB2AF3673C0026F147 /* EmployeesView.swift */; };
+		7BC39BBE2AF38BA80026F147 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BBD2AF38BA80026F147 /* InfoView.swift */; };
+		7BC39BC02AF38EE00026F147 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BBF2AF38EE00026F147 /* ColorsView.swift */; };
+		7BC39BC22AF390720026F147 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BC12AF390720026F147 /* ReviewView.swift */; };
+		7BC39BC42AF3968B0026F147 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BC32AF3968B0026F147 /* ResultView.swift */; };
+		7BC39BC72AF397520026F147 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC39BC62AF397520026F147 /* Lottie */; };
+		7BC39BCA2AF398490026F147 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BC92AF398490026F147 /* success.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +108,15 @@
 		7BC39BAF2AF28F460026F147 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		7BC39BB12AF29B210026F147 /* OCUserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCUserViewModel.h; sourceTree = "<group>"; };
 		7BC39BB22AF29B210026F147 /* OCUserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCUserViewModel.m; sourceTree = "<group>"; };
+		7BC39BB42AF29F7B0026F147 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7BC39BB62AF2B5150026F147 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7BC39BB92AF35D030026F147 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		7BC39BBB2AF3673C0026F147 /* EmployeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesView.swift; sourceTree = "<group>"; };
+		7BC39BBD2AF38BA80026F147 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		7BC39BBF2AF38EE00026F147 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
+		7BC39BC12AF390720026F147 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		7BC39BC32AF3968B0026F147 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		7BC39BC92AF398490026F147 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +126,7 @@
 			files = (
 				7BC39B672AF13CB30026F147 /* Swinject in Frameworks */,
 				7BC39B692AF13CB30026F147 /* Swinject-Dynamic in Frameworks */,
+				7BC39BC72AF397520026F147 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +172,7 @@
 		7BC39B332AF13AE30026F147 /* Phone */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BC82AF3983D0026F147 /* Json */,
 				7BC39BA72AF28D940026F147 /* MVI-Swift */,
 				7BC39BA62AF28C7B0026F147 /* MVVM-Objective-C */,
 				7BC39B972AF1DEE10026F147 /* Info.plist */,
@@ -239,6 +260,7 @@
 		7BC39BA72AF28D940026F147 /* MVI-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BB82AF2D62E0026F147 /* Components */,
 				7BC39BAC2AF28E3D0026F147 /* Intent */,
 				7BC39BAB2AF28E340026F147 /* View */,
 				7BC39B5F2AF13BBB0026F147 /* Model */,
@@ -281,6 +303,14 @@
 		7BC39BAB2AF28E340026F147 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BB42AF29F7B0026F147 /* LoginView.swift */,
+				7BC39BB62AF2B5150026F147 /* HomeView.swift */,
+				7BC39BB92AF35D030026F147 /* CardView.swift */,
+				7BC39BBB2AF3673C0026F147 /* EmployeesView.swift */,
+				7BC39BBD2AF38BA80026F147 /* InfoView.swift */,
+				7BC39BBF2AF38EE00026F147 /* ColorsView.swift */,
+				7BC39BC12AF390720026F147 /* ReviewView.swift */,
+				7BC39BC32AF3968B0026F147 /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +322,21 @@
 				7BC39BAD2AF28E850026F147 /* UserIntent.swift */,
 			);
 			path = Intent;
+			sourceTree = "<group>";
+		};
+		7BC39BB82AF2D62E0026F147 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7BC39BC82AF3983D0026F147 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39BC92AF398490026F147 /* success.json */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +358,7 @@
 			packageProductDependencies = (
 				7BC39B662AF13CB30026F147 /* Swinject */,
 				7BC39B682AF13CB30026F147 /* Swinject-Dynamic */,
+				7BC39BC62AF397520026F147 /* Lottie */,
 			);
 			productName = Phone;
 			productReference = 7BC39B312AF13AE30026F147 /* Phone.app */;
@@ -395,6 +441,7 @@
 				7BC39B652AF13CB30026F147 /* XCRemoteSwiftPackageReference "Swinject" */,
 				7BC39B6D2AF13D8A0026F147 /* XCRemoteSwiftPackageReference "Cuckoo" */,
 				7BC39B702AF13E960026F147 /* XCRemoteSwiftPackageReference "OCMockito" */,
+				7BC39BC52AF397520026F147 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 7BC39B322AF13AE30026F147 /* Products */;
 			projectDirPath = "";
@@ -415,6 +462,7 @@
 				7BC39B3D2AF13AE40026F147 /* Preview Assets.xcassets in Resources */,
 				7BC39B392AF13AE40026F147 /* Assets.xcassets in Resources */,
 				7BC39B742AF141570026F147 /* Debug.xcconfig in Resources */,
+				7BC39BCA2AF398490026F147 /* success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,22 +491,30 @@
 				7BC39B942AF1DAF80026F147 /* UserService.swift in Sources */,
 				7BC39B762AF144DE0026F147 /* LoginResponse.swift in Sources */,
 				7BC39B8C2AF1D7940026F147 /* NetworkClient.swift in Sources */,
+				7BC39BB52AF29F7B0026F147 /* LoginView.swift in Sources */,
+				7BC39BC42AF3968B0026F147 /* ResultView.swift in Sources */,
 				7BC39B902AF1D7D90026F147 /* URLSessionDataTaskProtocol.swift in Sources */,
 				7BC39BA12AF279B30026F147 /* ServiceClient.m in Sources */,
 				7BC39B9E2AF25E700026F147 /* NetworkService.m in Sources */,
+				7BC39BBC2AF3673C0026F147 /* EmployeesView.swift in Sources */,
 				7BC39B8E2AF1D7A20026F147 /* NetworkClientImplementation.swift in Sources */,
 				7BC39B882AF1D4730026F147 /* UserInfo.m in Sources */,
 				7BC39BB32AF29B210026F147 /* OCUserViewModel.m in Sources */,
 				7BC39B7A2AF145420026F147 /* Support.swift in Sources */,
 				7BC39B852AF1D3C40026F147 /* UserData.swift in Sources */,
 				7BC39B812AF1D1970026F147 /* RootResponse.m in Sources */,
+				7BC39BBE2AF38BA80026F147 /* InfoView.swift in Sources */,
+				7BC39BBA2AF35D030026F147 /* CardView.swift in Sources */,
 				7BC39BB02AF28F460026F147 /* UserState.swift in Sources */,
 				7BC39B782AF145140026F147 /* ColorData.swift in Sources */,
 				7BC39B962AF1DC510026F147 /* UserServiceImplementation.swift in Sources */,
+				7BC39BC02AF38EE00026F147 /* ColorsView.swift in Sources */,
 				7BC39BA52AF285D20026F147 /* UserViewModel.swift in Sources */,
 				7BC39B832AF1D3820026F147 /* UserResponse.swift in Sources */,
 				7BC39B922AF1D80A0026F147 /* NetworkError.swift in Sources */,
 				7BC39B9B2AF1E5530026F147 /* EndpointKey.swift in Sources */,
+				7BC39BB72AF2B5150026F147 /* HomeView.swift in Sources */,
+				7BC39BC22AF390720026F147 /* ReviewView.swift in Sources */,
 				7BC39B372AF13AE30026F147 /* ContentView.swift in Sources */,
 				7BC39B352AF13AE30026F147 /* PhoneApp.swift in Sources */,
 			);
@@ -613,6 +669,7 @@
 		};
 		7BC39B572AF13AE40026F147 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC39B732AF141570026F147 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -634,7 +691,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -674,7 +731,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -692,6 +749,7 @@
 		};
 		7BC39B5A2AF13AE40026F147 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC39B732AF141570026F147 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -736,6 +794,7 @@
 		};
 		7BC39B5D2AF13AE40026F147 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC39B732AF141570026F147 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -842,6 +901,14 @@
 				kind = branch;
 			};
 		};
+		7BC39BC52AF397520026F147 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.3.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -864,6 +931,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7BC39B702AF13E960026F147 /* XCRemoteSwiftPackageReference "OCMockito" */;
 			productName = OCMockito;
+		};
+		7BC39BC62AF397520026F147 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC39BC52AF397520026F147 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

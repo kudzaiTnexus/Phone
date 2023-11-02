@@ -5,7 +5,11 @@
 //  Created by KudzaisheMhou on 31/10/2023.
 //
 
-BASE_URL = https://debug.reqres.in/api
+// Define a SLASH variable to work around Xcode interpreting '//' as a comment.
+// This allows us to compose the BASE_URL with the necessary double slashes for the URL scheme.
+SLASH=/
+
+BASE_URL = https:$(SLASH)/reqres.in/api
 LOGIN_ENDPOINT = /login
 EMPLOYEES_ENDPOINT = /users?page=1&per_page=12
 COLORS_ENDPOINT = /unknown?per_page=12

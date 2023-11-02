@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 class UserViewModel: ObservableObject {
     
-    @Published private(set) var viewState = UserState()
+    @Published var viewState = UserState()
     
     private var userService: UserService
     
@@ -21,17 +21,26 @@ class UserViewModel: ObservableObject {
     func intent(_ intent: UserIntent) {
         switch intent {
         case .login(let username, let password):
-            load { try await self.userService.login(with: username, password: password) }
-            update: { self.viewState.login = $0 }
-        case .employees:
-            load { try await self.userService.employees() }
-            update: { self.viewState.employees = $0.data ?? [] }
-        case .teamMembers:
-            load { try await self.userService.teamMembers() }
-            update: { self.viewState.teamMembers = $0.data ?? [] }
-        case .colors:
-            load{ try await self.userService.colors() }
-            update: { self.viewState.colorsData = $0.data ?? [] }
+            load( { try await self.userService.login(with: username, password: password) },
+                  completion: { [weak self] result in
+                    switch result {
+                    case .success(let loginResponse):
+                        self?.viewState.login = loginResponse
+                        self?.viewState.isLoggedIn = true
+                    case .failure(let error):
+                        self?.viewState.error = error
+                    }
+               }
+            )
+        case .employees: break
+//            load { try await self.userService.employees() }
+//            update: { self.viewState.employees = $0.data ?? [] }
+        case .teamMembers: break
+//            load { try await self.userService.teamMembers() }
+//            update: { self.viewState.teamMembers = $0.data ?? [] }
+        case .colors: break
+//            load{ try await self.userService.colors() }
+//            update: { self.viewState.colorsData = $0.data ?? [] }
         case .clearError:
             viewState.error = nil
         }
@@ -39,15 +48,15 @@ class UserViewModel: ObservableObject {
     
     private func load<T>(
         _ operation: @escaping () async throws -> T,
-        update: @escaping (T) -> Void
+        completion: @escaping (Result<T, Error>) -> Void
     ) {
         viewState.isLoading = true
         Task {
             do {
                 let result = try await operation()
-                update(result)
+                completion(.success(result))
             } catch {
-                self.viewState.error = error
+                completion(.failure(error))
             }
             self.viewState.isLoading = false
         }
