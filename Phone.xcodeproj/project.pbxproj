@@ -59,6 +59,19 @@
 		7BC39BDF2AF3FD830026F147 /* LoginRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BDE2AF3FD830026F147 /* LoginRequestBody.swift */; };
 		7BC39BE12AF3FDA20026F147 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BE02AF3FDA20026F147 /* UserRequest.swift */; };
 		7BC39BE32AF406310026F147 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC39BE22AF406310026F147 /* users.json */; };
+		7BC39BE72AF4798C0026F147 /* CardUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BE62AF4798C0026F147 /* CardUIView.swift */; };
+		7BC39BE92AF47BDE0026F147 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BE82AF47BDE0026F147 /* LoginViewController.swift */; };
+		7BC39BEB2AF47E760026F147 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BEA2AF47E760026F147 /* SplashScreen.swift */; };
+		7BC39BED2AF4C0D80026F147 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BEC2AF4C0D80026F147 /* HomeViewController.swift */; };
+		7BC39BEF2AF4C4E40026F147 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BEE2AF4C4E40026F147 /* BaseViewController.swift */; };
+		7BC39BF22AF4F3B50026F147 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BF12AF4F3B50026F147 /* MockURLSessionDataTask.swift */; };
+		7BC39BF42AF4F3E30026F147 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BF32AF4F3E30026F147 /* NetworkClientTests.swift */; };
+		7BC39BF72AF4F53B0026F147 /* DummyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BF62AF4F53B0026F147 /* DummyDecodable.swift */; };
+		7BC39BFA2AF4F8DC0026F147 /* UserServiceImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BF92AF4F8DC0026F147 /* UserServiceImplementationTests.swift */; };
+		7BC39BFC2AF4F94D0026F147 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BFB2AF4F94D0026F147 /* MockNetworkClient.swift */; };
+		7BC39BFE2AF4F9BF0026F147 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BFD2AF4F9BF0026F147 /* MockData.swift */; };
+		7BC39C002AF4FD240026F147 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BFF2AF4FD240026F147 /* MockUserService.swift */; };
+		7BC39C022AF4FD470026F147 /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C012AF4FD470026F147 /* UserViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +149,19 @@
 		7BC39BDE2AF3FD830026F147 /* LoginRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestBody.swift; sourceTree = "<group>"; };
 		7BC39BE02AF3FDA20026F147 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		7BC39BE22AF406310026F147 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		7BC39BE62AF4798C0026F147 /* CardUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUIView.swift; sourceTree = "<group>"; };
+		7BC39BE82AF47BDE0026F147 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7BC39BEA2AF47E760026F147 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		7BC39BEC2AF4C0D80026F147 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7BC39BEE2AF4C4E40026F147 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7BC39BF12AF4F3B50026F147 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
+		7BC39BF32AF4F3E30026F147 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
+		7BC39BF62AF4F53B0026F147 /* DummyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDecodable.swift; sourceTree = "<group>"; };
+		7BC39BF92AF4F8DC0026F147 /* UserServiceImplementationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceImplementationTests.swift; sourceTree = "<group>"; };
+		7BC39BFB2AF4F94D0026F147 /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
+		7BC39BFD2AF4F9BF0026F147 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		7BC39BFF2AF4FD240026F147 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
+		7BC39C012AF4FD470026F147 /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +244,12 @@
 		7BC39B452AF13AE40026F147 /* PhoneTests */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BF52AF4F5300026F147 /* DummyData */,
+				7BC39BF02AF4F3AA0026F147 /* MockURLSessionDataTask */,
 				7BC39B462AF13AE40026F147 /* PhoneTests.swift */,
+				7BC39BF32AF4F3E30026F147 /* NetworkClientTests.swift */,
+				7BC39BF92AF4F8DC0026F147 /* UserServiceImplementationTests.swift */,
+				7BC39C012AF4FD470026F147 /* UserViewModelTests.swift */,
 			);
 			path = PhoneTests;
 			sourceTree = "<group>";
@@ -326,15 +357,9 @@
 		7BC39BAB2AF28E340026F147 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39BE52AF478500026F147 /* UIKIT */,
+				7BC39BE42AF478360026F147 /* SwiftUI */,
 				7BC39BD02AF3DE620026F147 /* Extensions */,
-				7BC39BB42AF29F7B0026F147 /* LoginView.swift */,
-				7BC39BB62AF2B5150026F147 /* HomeView.swift */,
-				7BC39BB92AF35D030026F147 /* CardView.swift */,
-				7BC39BBB2AF3673C0026F147 /* EmployeesView.swift */,
-				7BC39BBD2AF38BA80026F147 /* InfoView.swift */,
-				7BC39BBF2AF38EE00026F147 /* ColorsView.swift */,
-				7BC39BC12AF390720026F147 /* ReviewView.swift */,
-				7BC39BC32AF3968B0026F147 /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +407,52 @@
 				7BC39BE22AF406310026F147 /* users.json */,
 			);
 			path = Offline;
+			sourceTree = "<group>";
+		};
+		7BC39BE42AF478360026F147 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39BB42AF29F7B0026F147 /* LoginView.swift */,
+				7BC39BB62AF2B5150026F147 /* HomeView.swift */,
+				7BC39BB92AF35D030026F147 /* CardView.swift */,
+				7BC39BBB2AF3673C0026F147 /* EmployeesView.swift */,
+				7BC39BBD2AF38BA80026F147 /* InfoView.swift */,
+				7BC39BBF2AF38EE00026F147 /* ColorsView.swift */,
+				7BC39BC12AF390720026F147 /* ReviewView.swift */,
+				7BC39BC32AF3968B0026F147 /* ResultView.swift */,
+				7BC39BEA2AF47E760026F147 /* SplashScreen.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		7BC39BE52AF478500026F147 /* UIKIT */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39BE62AF4798C0026F147 /* CardUIView.swift */,
+				7BC39BE82AF47BDE0026F147 /* LoginViewController.swift */,
+				7BC39BEC2AF4C0D80026F147 /* HomeViewController.swift */,
+				7BC39BEE2AF4C4E40026F147 /* BaseViewController.swift */,
+			);
+			path = UIKIT;
+			sourceTree = "<group>";
+		};
+		7BC39BF02AF4F3AA0026F147 /* MockURLSessionDataTask */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39BF12AF4F3B50026F147 /* MockURLSessionDataTask.swift */,
+				7BC39BFB2AF4F94D0026F147 /* MockNetworkClient.swift */,
+				7BC39BFD2AF4F9BF0026F147 /* MockData.swift */,
+				7BC39BFF2AF4FD240026F147 /* MockUserService.swift */,
+			);
+			path = MockURLSessionDataTask;
+			sourceTree = "<group>";
+		};
+		7BC39BF52AF4F5300026F147 /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39BF62AF4F53B0026F147 /* DummyDecodable.swift */,
+			);
+			path = DummyData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC39BE92AF47BDE0026F147 /* LoginViewController.swift in Sources */,
 				7BC39BAE2AF28E850026F147 /* UserIntent.swift in Sources */,
 				7BC39B942AF1DAF80026F147 /* UserService.swift in Sources */,
 				7BC39B762AF144DE0026F147 /* LoginResponse.swift in Sources */,
@@ -547,6 +619,7 @@
 				7BC39BC42AF3968B0026F147 /* ResultView.swift in Sources */,
 				7BC39B902AF1D7D90026F147 /* URLSessionDataTaskProtocol.swift in Sources */,
 				7BC39BA12AF279B30026F147 /* ServiceClient.m in Sources */,
+				7BC39BE72AF4798C0026F147 /* CardUIView.swift in Sources */,
 				7BC39B9E2AF25E700026F147 /* NetworkService.m in Sources */,
 				7BC39BBC2AF3673C0026F147 /* EmployeesView.swift in Sources */,
 				7BC39B8E2AF1D7A20026F147 /* NetworkClientImplementation.swift in Sources */,
@@ -558,9 +631,12 @@
 				7BC39BBE2AF38BA80026F147 /* InfoView.swift in Sources */,
 				7BC39BBA2AF35D030026F147 /* CardView.swift in Sources */,
 				7BC39BB02AF28F460026F147 /* UserState.swift in Sources */,
+				7BC39BED2AF4C0D80026F147 /* HomeViewController.swift in Sources */,
 				7BC39B782AF145140026F147 /* ColorData.swift in Sources */,
 				7BC39B962AF1DC510026F147 /* UserServiceImplementation.swift in Sources */,
 				7BC39BC02AF38EE00026F147 /* ColorsView.swift in Sources */,
+				7BC39BEB2AF47E760026F147 /* SplashScreen.swift in Sources */,
+				7BC39BEF2AF4C4E40026F147 /* BaseViewController.swift in Sources */,
 				7BC39BDF2AF3FD830026F147 /* LoginRequestBody.swift in Sources */,
 				7BC39BA52AF285D20026F147 /* UserViewModel.swift in Sources */,
 				7BC39BD22AF3DE710026F147 /* Color+Extension.swift in Sources */,
@@ -581,6 +657,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC39B472AF13AE40026F147 /* PhoneTests.swift in Sources */,
+				7BC39C022AF4FD470026F147 /* UserViewModelTests.swift in Sources */,
+				7BC39BFC2AF4F94D0026F147 /* MockNetworkClient.swift in Sources */,
+				7BC39C002AF4FD240026F147 /* MockUserService.swift in Sources */,
+				7BC39BF22AF4F3B50026F147 /* MockURLSessionDataTask.swift in Sources */,
+				7BC39BF72AF4F53B0026F147 /* DummyDecodable.swift in Sources */,
+				7BC39BFA2AF4F8DC0026F147 /* UserServiceImplementationTests.swift in Sources */,
+				7BC39BFE2AF4F9BF0026F147 /* MockData.swift in Sources */,
+				7BC39BF42AF4F3E30026F147 /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

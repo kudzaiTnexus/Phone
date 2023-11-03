@@ -9,8 +9,16 @@ import SwiftUI
 
 let navBarAppearence = UINavigationBarAppearance()
 
+enum ViewType {
+    case uiKit
+    case swiftUI
+    case objectiveC
+    case splashScreen
+}
+
 @main
 struct PhoneApp: App {
+    @State private var isActive: ViewType = .splashScreen
     
     @StateObject var userViewModel: UserViewModel = UserViewModel(userService: UserServiceImplementation(networkClient: NetworkClientImplementation()))
     
@@ -27,20 +35,29 @@ struct PhoneApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginView()
+                switch isActive {
+                case .uiKit:
+                    LoginViewControllerRepresentable()
+                case .swiftUI:
+                    LoginView()
+                case .objectiveC:
+                    EmptyView()
+                case .splashScreen:
+                    SplashScreen(isActive: $isActive)
+                }
             }
             .environmentObject(userViewModel)
             .overlay(
-                    Group {
-                        if userViewModel.viewState.isTeamMembersLoading {
-                            ZStack {
-                                Color.black.opacity(0.3).edgesIgnoringSafeArea(.all)
-                                
-                                ProgressView()
-                                    .scaleEffect(1.5, anchor: .center)
-                            }
+                Group {
+                    if userViewModel.viewState.isTeamMembersLoading {
+                        ZStack {
+                            Color.black.opacity(0.3).edgesIgnoringSafeArea(.all)
+                            
+                            ProgressView()
+                                .scaleEffect(1.5, anchor: .center)
                         }
                     }
+                }
             )
         }
     }
