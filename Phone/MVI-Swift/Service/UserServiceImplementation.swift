@@ -9,11 +9,7 @@ import Foundation
 
 class UserServiceImplementation: UserService {
     
-    let networkClient: NetworkClient
-    
-    init(networkClient: NetworkClient) {
-        self.networkClient = networkClient
-    }
+    private let networkClient = Resolver.resolve(dependency: NetworkClient.self)
     
     func login(with username: String, password: String) async throws -> LoginResponse {
         let url = try getUrl(for: .login)

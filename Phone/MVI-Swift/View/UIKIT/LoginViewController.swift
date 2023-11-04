@@ -14,10 +14,12 @@ import Combine
 struct LoginViewControllerRepresentable: UIViewControllerRepresentable {
     
     @EnvironmentObject var userViewModel: UserViewModel
+    private var router = Resolver.resolve(dependency: Router.self)
     
-    func makeUIViewController(context: Context) -> LoginViewController {
+    func makeUIViewController(context: Context) ->  LoginViewController {
         let viewController = LoginViewController()
         viewController.userViewModel = userViewModel
+        
         return viewController
     }
     
@@ -31,6 +33,7 @@ class LoginViewController: UIViewController {
     var userViewModel: UserViewModel?
     
     private var cancellables: Set<AnyCancellable> = []
+    private var router = Resolver.resolve(dependency: Router.self)
     
     private var usernameTextField: UITextField = {
         let usernameTextField = UITextField()
@@ -111,25 +114,24 @@ class LoginViewController: UIViewController {
         setupBinding()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        
+        router.update(self.navigationController)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     private func setupBinding() {
         userViewModel?.$viewState
             .sink(receiveValue: { [weak self] state in
                 guard let self = self else { return }
                 loadingOverlayView.isHidden = !state.isLoginLoading
-            })
-            .store(in: &cancellables)
-        
-        userViewModel?.$viewState
-            .sink(receiveValue: { [weak self] state in
-                guard let self,
-                    let userViewModel else { return }
-                if state.isLoggedIn {
-                    if !(self.navigationController?.topViewController is HomeViewController) { // used to avoid multiple pushes
-                        let viewController = HomeViewController(userViewModel: userViewModel)
-                        navigationController?.pushViewController(viewController, animated: true)
-                    }
-
-                }
             })
             .store(in: &cancellables)
     }

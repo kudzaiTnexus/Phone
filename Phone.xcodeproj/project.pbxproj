@@ -72,6 +72,15 @@
 		7BC39BFE2AF4F9BF0026F147 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BFD2AF4F9BF0026F147 /* MockData.swift */; };
 		7BC39C002AF4FD240026F147 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39BFF2AF4FD240026F147 /* MockUserService.swift */; };
 		7BC39C022AF4FD470026F147 /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C012AF4FD470026F147 /* UserViewModelTests.swift */; };
+		7BC39C042AF53ABC0026F147 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C032AF53ABC0026F147 /* EmployeesViewController.swift */; };
+		7BC39C062AF54B670026F147 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C052AF54B670026F147 /* InfoViewController.swift */; };
+		7BC39C082AF552F50026F147 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C072AF552F50026F147 /* ColorsViewController.swift */; };
+		7BC39C0A2AF5AC640026F147 /* ReviewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C092AF5AC640026F147 /* ReviewController .swift */; };
+		7BC39C0C2AF5F8F90026F147 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C0B2AF5F8F90026F147 /* AppRouter.swift */; };
+		7BC39C0F2AF5FB620026F147 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C0E2AF5FB620026F147 /* AppDependencies.swift */; };
+		7BC39C112AF5FB850026F147 /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C102AF5FB850026F147 /* DependencyInjectionContainer.swift */; };
+		7BC39C132AF5FBA00026F147 /* Resolvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C122AF5FBA00026F147 /* Resolvable.swift */; };
+		7BC39C152AF6A3DD0026F147 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC39C142AF6A3DD0026F147 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +171,15 @@
 		7BC39BFD2AF4F9BF0026F147 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		7BC39BFF2AF4FD240026F147 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
 		7BC39C012AF4FD470026F147 /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
+		7BC39C032AF53ABC0026F147 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		7BC39C052AF54B670026F147 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		7BC39C072AF552F50026F147 /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
+		7BC39C092AF5AC640026F147 /* ReviewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewController .swift"; sourceTree = "<group>"; };
+		7BC39C0B2AF5F8F90026F147 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		7BC39C0E2AF5FB620026F147 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		7BC39C102AF5FB850026F147 /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
+		7BC39C122AF5FBA00026F147 /* Resolvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolvable.swift; sourceTree = "<group>"; };
+		7BC39C142AF6A3DD0026F147 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +332,7 @@
 		7BC39BA72AF28D940026F147 /* MVI-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39C0D2AF5FB350026F147 /* DependencyInjection */,
 				7BC39BB82AF2D62E0026F147 /* Components */,
 				7BC39BAC2AF28E3D0026F147 /* Intent */,
 				7BC39BAB2AF28E340026F147 /* View */,
@@ -428,10 +447,16 @@
 		7BC39BE52AF478500026F147 /* UIKIT */ = {
 			isa = PBXGroup;
 			children = (
+				7BC39C162AF6BB3D0026F147 /* Router */,
 				7BC39BE62AF4798C0026F147 /* CardUIView.swift */,
 				7BC39BE82AF47BDE0026F147 /* LoginViewController.swift */,
 				7BC39BEC2AF4C0D80026F147 /* HomeViewController.swift */,
 				7BC39BEE2AF4C4E40026F147 /* BaseViewController.swift */,
+				7BC39C032AF53ABC0026F147 /* EmployeesViewController.swift */,
+				7BC39C052AF54B670026F147 /* InfoViewController.swift */,
+				7BC39C072AF552F50026F147 /* ColorsViewController.swift */,
+				7BC39C092AF5AC640026F147 /* ReviewController .swift */,
+				7BC39C142AF6A3DD0026F147 /* ResultViewController.swift */,
 			);
 			path = UIKIT;
 			sourceTree = "<group>";
@@ -453,6 +478,24 @@
 				7BC39BF62AF4F53B0026F147 /* DummyDecodable.swift */,
 			);
 			path = DummyData;
+			sourceTree = "<group>";
+		};
+		7BC39C0D2AF5FB350026F147 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39C0E2AF5FB620026F147 /* AppDependencies.swift */,
+				7BC39C102AF5FB850026F147 /* DependencyInjectionContainer.swift */,
+				7BC39C122AF5FBA00026F147 /* Resolvable.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		7BC39C162AF6BB3D0026F147 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7BC39C0B2AF5F8F90026F147 /* AppRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC39C0C2AF5F8F90026F147 /* AppRouter.swift in Sources */,
 				7BC39BE92AF47BDE0026F147 /* LoginViewController.swift in Sources */,
 				7BC39BAE2AF28E850026F147 /* UserIntent.swift in Sources */,
 				7BC39B942AF1DAF80026F147 /* UserService.swift in Sources */,
@@ -621,6 +665,7 @@
 				7BC39BA12AF279B30026F147 /* ServiceClient.m in Sources */,
 				7BC39BE72AF4798C0026F147 /* CardUIView.swift in Sources */,
 				7BC39B9E2AF25E700026F147 /* NetworkService.m in Sources */,
+				7BC39C112AF5FB850026F147 /* DependencyInjectionContainer.swift in Sources */,
 				7BC39BBC2AF3673C0026F147 /* EmployeesView.swift in Sources */,
 				7BC39B8E2AF1D7A20026F147 /* NetworkClientImplementation.swift in Sources */,
 				7BC39B882AF1D4730026F147 /* UserInfo.m in Sources */,
@@ -628,6 +673,8 @@
 				7BC39B7A2AF145420026F147 /* Support.swift in Sources */,
 				7BC39B852AF1D3C40026F147 /* UserData.swift in Sources */,
 				7BC39B812AF1D1970026F147 /* RootResponse.m in Sources */,
+				7BC39C062AF54B670026F147 /* InfoViewController.swift in Sources */,
+				7BC39C042AF53ABC0026F147 /* EmployeesViewController.swift in Sources */,
 				7BC39BBE2AF38BA80026F147 /* InfoView.swift in Sources */,
 				7BC39BBA2AF35D030026F147 /* CardView.swift in Sources */,
 				7BC39BB02AF28F460026F147 /* UserState.swift in Sources */,
@@ -636,13 +683,18 @@
 				7BC39B962AF1DC510026F147 /* UserServiceImplementation.swift in Sources */,
 				7BC39BC02AF38EE00026F147 /* ColorsView.swift in Sources */,
 				7BC39BEB2AF47E760026F147 /* SplashScreen.swift in Sources */,
+				7BC39C0A2AF5AC640026F147 /* ReviewController .swift in Sources */,
+				7BC39C082AF552F50026F147 /* ColorsViewController.swift in Sources */,
 				7BC39BEF2AF4C4E40026F147 /* BaseViewController.swift in Sources */,
 				7BC39BDF2AF3FD830026F147 /* LoginRequestBody.swift in Sources */,
+				7BC39C0F2AF5FB620026F147 /* AppDependencies.swift in Sources */,
+				7BC39C152AF6A3DD0026F147 /* ResultViewController.swift in Sources */,
 				7BC39BA52AF285D20026F147 /* UserViewModel.swift in Sources */,
 				7BC39BD22AF3DE710026F147 /* Color+Extension.swift in Sources */,
 				7BC39B832AF1D3820026F147 /* UserResponse.swift in Sources */,
 				7BC39B922AF1D80A0026F147 /* NetworkError.swift in Sources */,
 				7BC39B9B2AF1E5530026F147 /* EndpointKey.swift in Sources */,
+				7BC39C132AF5FBA00026F147 /* Resolvable.swift in Sources */,
 				7BC39BB72AF2B5150026F147 /* HomeView.swift in Sources */,
 				7BC39BD42AF3F3550026F147 /* ColorResponse.swift in Sources */,
 				7BC39BE12AF3FDA20026F147 /* UserRequest.swift in Sources */,

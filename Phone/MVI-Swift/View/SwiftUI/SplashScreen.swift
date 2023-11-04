@@ -21,7 +21,7 @@ struct SplashScreen: View {
             Color.background.edgesIgnoringSafeArea(.all)
             
             // UIKit Button
-            StickyNoteButton(label: "UIKit", color: .gray) {
+            StickyNoteButton(label: "UIKit", color: .teal) {
                 isActive = .uiKit
             }
             .offset(x: animateCards ? -50 : -UIScreen.main.bounds.width/2, y: animateCards ? -150 : -UIScreen.main.bounds.height/2)

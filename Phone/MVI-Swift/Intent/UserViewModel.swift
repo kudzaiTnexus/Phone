@@ -12,11 +12,8 @@ class UserViewModel: ObservableObject {
     
     @Published var viewState = UserState()
     
-    private var userService: UserService
-    
-    init(userService: UserService) {
-        self.userService = userService
-    }
+    private let userService = Resolver.resolve(dependency: UserService.self)
+    private let router = Resolver.resolve(dependency: Router.self)
 
     func intent(_ intent: UserIntent) {
         switch intent {
@@ -31,6 +28,7 @@ class UserViewModel: ObservableObject {
                         self?.viewState.login = loginResponse
                         self?.postLoginDataFetch()
                         self?.viewState.isLoggedIn = true
+                        self?.router.routeToHome(userViewModel: self!)
                     case .failure(let error):
                         self?.viewState.error = error
                     }

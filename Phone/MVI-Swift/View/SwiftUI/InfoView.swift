@@ -38,6 +38,7 @@ struct InfoView: View {
                 showTitle: true,
                 showChevron: true,
                 showCircle: true,
+                title: "Select Employee preffered color",
                 circleColor: selectedColor?.color ?? "",
                 infoArray: [selectedColor?.name ?? ""]
             )

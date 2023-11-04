@@ -20,6 +20,9 @@ struct ResultView: View {
                     .playing()
                     .frame(width: 180, height: 180)
                 
+                Text("Success")
+                    .font(.system(size: 16, weight: .semibold))
+                
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse est leo, vehicula eu eleifend non, auctor ut arcu, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse est leo, vehicula eu eleifend non, auctor ut arcu")
                     .font(.system(size: 14, weight: .regular))
                     .multilineTextAlignment(.leading)

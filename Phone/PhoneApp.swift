@@ -20,7 +20,7 @@ enum ViewType {
 struct PhoneApp: App {
     @State private var isActive: ViewType = .splashScreen
     
-    @StateObject var userViewModel: UserViewModel = UserViewModel(userService: UserServiceImplementation(networkClient: NetworkClientImplementation()))
+    @StateObject var userViewModel: UserViewModel = UserViewModel()
     
     init() {
         navBarAppearence.configureWithOpaqueBackground()
@@ -30,6 +30,8 @@ struct PhoneApp: App {
                
         UINavigationBar.appearance().standardAppearance = navBarAppearence
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearence
+        
+        AppDependencies.registerAllApplicationDependencies()
     }
           
     var body: some Scene {

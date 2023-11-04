@@ -7,20 +7,56 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class HomeViewController: BaseViewController {
+    
+    private var cancellables: Set<AnyCancellable> = []
+    private let router = Resolver.resolve(dependency: Router.self)
 
-    // UI Components
-    let usernameTextField = UITextField()
-    let dobButton = UIButton(type: .system)
-    let placeOfBirthTextField = UITextField()
-    let nextButton = UIButton(type: .system)
-    let activityIndicator = UIActivityIndicatorView(style: .large)
+    private var dobButton: UITextField = {
+        let textfield = UITextField()
+        textfield.placeholder = "Date of Birth"
+        textfield.borderStyle = .roundedRect
+        textfield.layer.cornerRadius = 4.0
+        textfield.layer.borderWidth = 1.0
+        textfield.layer.borderColor = UIColor.gray.cgColor
+        return textfield
+    }()
+    
+    private var placeOfBirthTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.placeholder = "Place of Birth"
+        textfield.borderStyle = .roundedRect
+        textfield.layer.cornerRadius = 4.0
+        textfield.layer.borderWidth = 1.0
+        textfield.layer.borderColor = UIColor.gray.cgColor
+        textfield.addTarget(self, action: #selector(placeOfBirthChanged), for: .editingChanged)
+        return textfield
+    }()
     
     let datePicker = UIDatePicker()
+    
+    private lazy var cardView: CardUIView = {
+        let cardView = CardUIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80))
+        cardView.showTitle = true
+        cardView.showChevron = true
+        cardView.showCircle = false
+        cardView.title = "Select an Employee"
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cardTapped))
+        cardView.addGestureRecognizer(tapGesture)
+        cardView.isUserInteractionEnabled = true
+        
+        return cardView
+    }()
 
     // ViewModel
     var userViewModel: UserViewModel
+    
+    deinit {
+        cancellables.forEach { $0.cancel() }
+    }
     
     init(userViewModel: UserViewModel) {
         self.userViewModel = userViewModel
@@ -34,57 +70,69 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        bindViewModel()
         hideBackButton()
         
         title = "Employee"
+        
+        setupNavigationBarButton()
+        setupBinding()
+        
+        placeOfBirthTextField.text = userViewModel.viewState.placeOfBirth
+      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 
     func setupViews() {
         self.view.backgroundColor = .white
-
-        usernameTextField.placeholder = "Username"
-        view.addSubview(usernameTextField)
+    
+        view.addSubview(cardView)
         
-        dobButton.setTitle("Date of Birth", for: .normal)
-        dobButton.addTarget(self, action: #selector(dobButtonTapped), for: .touchUpInside)
         view.addSubview(dobButton)
-        
-        placeOfBirthTextField.placeholder = "Place of Birth"
         view.addSubview(placeOfBirthTextField)
-        
-        nextButton.setTitle("Next", for: .normal)
-        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        view.addSubview(nextButton)
-        
-        view.addSubview(activityIndicator)
 
         // Layout using Auto Layout
-        usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         dobButton.translatesAutoresizingMaskIntoConstraints = false
         placeOfBirthTextField.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        cardView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            usernameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
-            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            cardView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            cardView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            cardView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            dobButton.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 16),
-            dobButton.leadingAnchor.constraint(equalTo: usernameTextField.leadingAnchor),
-            dobButton.trailingAnchor.constraint(equalTo: usernameTextField.trailingAnchor),
+            dobButton.topAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 32),
+            dobButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            dobButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
             placeOfBirthTextField.topAnchor.constraint(equalTo: dobButton.bottomAnchor, constant: 16),
-            placeOfBirthTextField.leadingAnchor.constraint(equalTo: usernameTextField.leadingAnchor),
-            placeOfBirthTextField.trailingAnchor.constraint(equalTo: usernameTextField.trailingAnchor),
-            
-            nextButton.topAnchor.constraint(equalTo: placeOfBirthTextField.bottomAnchor, constant: 16),
-            nextButton.trailingAnchor.constraint(equalTo: usernameTextField.trailingAnchor),
-            
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            placeOfBirthTextField.leadingAnchor.constraint(equalTo: dobButton.leadingAnchor),
+            placeOfBirthTextField.trailingAnchor.constraint(equalTo: dobButton.trailingAnchor),
         ])
+    }
+    
+    func setupBinding() {
+        userViewModel.$viewState
+            .sink(receiveValue: { [weak self] state in
+                guard let self = self else { return }
+               
+                if state.isEmployeesLoading {
+                   // reductedState
+                } else {
+                     let employeeData = state.selectedEmployee ?? state.employees.first
+                    
+                    cardView.avatar = employeeData?.avatar ?? ""
+                    cardView.infoArray = [
+                        employeeData?.firstName ?? "",
+                        employeeData?.email ?? ""
+                    ]
+                    cardView.updateUI()
+                }
+            })
+            .store(in: &cancellables)
     }
 
     @objc func dobButtonTapped() {
@@ -104,34 +152,22 @@ class HomeViewController: BaseViewController {
 
     @objc func datePickerValueChanged() {
         // Format the date from datePicker
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let selectedDate = dateFormatter.string(from: datePicker.date)
-        userViewModel.viewState.dateOfBirth = selectedDate
-        dobButton.setTitle(selectedDate, for: .normal)
-    }
-
-    @objc func nextButtonTapped() {
-        // Logic for next button tap
-        // Maybe navigate to another view controller
-    }
-
-    func bindViewModel() {
-        // For the sake of example, using NotificationCenter as binding mechanism.
-        // In a real-world scenario, you might use Combine, Delegation, or other mechanisms.
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleLoadingChange), name: NSNotification.Name("isEmployeesLoadingChanged"), object: nil)
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        let selectedDate = dateFormatter.string(from: datePicker.date)
+//        userViewModel.viewState.dateOfBirth = selectedDate
+//        dobButton.setTitle(selectedDate, for: .normal)
     }
     
-    @objc func handleLoadingChange() {
-        if userViewModel.viewState.isEmployeesLoading {
-            activityIndicator.startAnimating()
-        } else {
-            activityIndicator.stopAnimating()
-        }
+    @objc func cardTapped() {
+        router.routeToEmployeesScreen(userViewModel: userViewModel)
     }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+
+    @objc override func nextButtonTapped() {
+        router.routeToInfoScreen(userViewModel: userViewModel)
+    }
+
+    @objc func placeOfBirthChanged(_ textField: UITextField) {
+        userViewModel.viewState.placeOfBirth = textField.text ?? ""
     }
 }
