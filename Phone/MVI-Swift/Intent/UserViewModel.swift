@@ -45,6 +45,7 @@ class UserViewModel: ObservableObject {
                     switch result {
                     case .success(let employeesData):
                         self?.viewState.employees = employeesData?.data ?? []
+                        self?.viewState.checkAndSelectEmployee()
                     case .failure(let error):
                         self?.viewState.error = error
                     }
@@ -102,6 +103,7 @@ class UserViewModel: ObservableObject {
                     switch result {
                     case .success(let colorData):
                         self?.viewState.colorsData = colorData?.data ?? []
+                        self?.viewState.checkAndSelectColor()
                     case .failure(let error):
                         self?.viewState.error = error
                     }

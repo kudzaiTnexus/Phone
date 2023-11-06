@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
         let usernameTextField = UITextField()
         usernameTextField.placeholder = "Enter username..."
         usernameTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        usernameTextField.autocapitalizationType = .none
         return usernameTextField
     }()
     

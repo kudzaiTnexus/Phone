@@ -17,8 +17,7 @@ struct HomeView: View {
     @State private var selectedDate: Date = Date()
     
     var employee: UserData? {
-        userViewModel.viewState.selectedEmployee ??
-        userViewModel.viewState.employees.first
+        userViewModel.viewState.selectedEmployee
     }
     
     var body: some View {

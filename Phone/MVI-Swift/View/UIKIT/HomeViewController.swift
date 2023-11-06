@@ -122,7 +122,7 @@ class HomeViewController: BaseViewController {
                 if state.isEmployeesLoading {
                    // reductedState
                 } else {
-                     let employeeData = state.selectedEmployee ?? state.employees.first
+                     let employeeData = state.selectedEmployee 
                     
                     cardView.avatar = employeeData?.avatar ?? ""
                     cardView.infoArray = [

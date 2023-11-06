@@ -66,4 +66,21 @@ struct UserState {
         error = nil
     }
     
+    
+    mutating func checkAndSelectEmployee() {
+        // If selectedEmployee is nil and there are employees available
+        if selectedEmployee == nil && !employees.isEmpty {
+            // Select the first employee
+            selectedEmployee = employees.first
+        }
+    }
+
+    mutating func checkAndSelectColor() {
+        // If selectedColor is nil and there are colors available
+        if selectedColor == nil && !colorsData.isEmpty {
+            // Select the first color
+            selectedColor = colorsData.first
+        }
+    }
+
 }
